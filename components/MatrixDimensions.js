@@ -4,7 +4,7 @@ import React from 'react';
 import { ScrollView, StyleSheet, Text, View, Image, FlatList, Button, TextInput } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import DropDownPicker from 'react-native-dropdown-picker';
+
 
 const MatrixDimensions = ({ navigation }) => {
 
@@ -15,9 +15,9 @@ const MatrixDimensions = ({ navigation }) => {
         <View style={styles.container}>
             <Text>Input Matrix Dimensions Below</Text>
             <Text>Rows:</Text>
-            <TextInput onChangeText={e => setNumRows(e)}></TextInput>
+            <TextInput keyboardType='numeric' value={numRows} onChangeText={(text) => setNumRows(text)}></TextInput>
             <Text>Columns:</Text>
-            <TextInput onChangeText={e => setNumCols(e)}></TextInput>
+            <TextInput keyboardType='numeric' value={numCols} onChangeText={(text) => setNumCols(text)}></TextInput>
             <Button defaultValue={0} title="Submit" onPress={() => navigation.navigate('Profile', { name: 'Jane', rows: numRows, columns: numCols })} />
         </View>
     )
