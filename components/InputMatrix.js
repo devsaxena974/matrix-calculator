@@ -4,6 +4,8 @@ import { ScrollView, StyleSheet, Text, View, Image, FlatList, Button, TextInput 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+var rref = require('rref')
+
 const InputMatrix = ({ navigation, route }) => {
     const rows = parseInt(route.params.rows, 10)
     const cols = parseInt(route.params.columns, 10)
