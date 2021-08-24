@@ -15,10 +15,10 @@ const MatrixDimensions = ({ navigation }) => {
         <View style={styles.container}>
             <Text>Input Matrix Dimensions Below</Text>
             <Text>Rows:</Text>
-            <TextInput keyboardType='numeric' value={numRows} onChangeText={(text) => setNumRows(text)}></TextInput>
+            <TextInput style={styles.input} keyboardType='numeric' onChangeText={(text) => setNumRows(text)}></TextInput>
             <Text>Columns:</Text>
-            <TextInput keyboardType='numeric' value={numCols} onChangeText={(text) => setNumCols(text)}></TextInput>
-            <Button defaultValue={0} title="Submit" onPress={() => navigation.navigate('Profile', { name: 'Jane', rows: numRows, columns: numCols })} />
+            <TextInput style={styles.input} keyboardType='numeric'  onChangeText={(text) => setNumCols(text)}></TextInput>
+            <Button defaultValue={0} title="Submit" onPress={() => navigation.navigate('Input Matrix', { name: 'Jane', rows: numRows, columns: numCols })} />
         </View>
     )
 }
@@ -31,6 +31,12 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       
     },
+    input: {
+      borderStyle: "solid",
+      borderBottomColor: "#000000",
+      borderWidth: 1,
+      padding: 10
+    }
   });
 
 export default MatrixDimensions

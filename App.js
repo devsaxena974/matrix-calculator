@@ -5,25 +5,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import MatrixDimensions from './components/MatrixDimensions';
+import InputMatrix from './components/InputMatrix';
 
 const Stack = createNativeStackNavigator();
 
-const logo = {
-  uri: 'https://reactnative.dev/img/tiny_logo.png',
-  width: 64,
-  height: 64
-};
-
-const HomeScreen = ({ navigation }) => {
-  return (
-    <Button
-      title="Go to Jane's profile"
-      onPress={() =>
-        navigation.navigate('Profile', { name: 'Jane' }) //navigates to Stack.Screen name='Profile'
-      }
-    />
-  );
-};
 const ProfileScreen = ({ navigation, route }) => {
   return <Text>This is {route.params.name}'s profile. Number of rows is {route.params.rows} and columns is {route.params.columns}</Text>;
 };
@@ -33,7 +18,7 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Matrix Dimensions" component={MatrixDimensions} options={{ title: "Matrix Dimensions" }}/>
-        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="Input Matrix" component={InputMatrix} />
       </Stack.Navigator>
       <StatusBar style="auto" />
     </NavigationContainer>
